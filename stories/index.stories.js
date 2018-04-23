@@ -5,8 +5,7 @@ import { range } from 'ramda';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import DialogContainer from '../src/dialog-container';
-import Dialog from '../src';
+import ContextualDialog from '../src';
 
 const Wrapper = styled.div`
   display: flex;
@@ -124,9 +123,9 @@ class DialogExample extends Component {
               <Button onClick={e => this.innerDialog.open(e)}>
                 Open Another Dialog
               </Button>
-              <Dialog>
+              <ContextualDialog.Dialog>
                 <SimpleDialog ref={n => (this.innerDialog = n)} />
-              </Dialog>
+              </ContextualDialog.Dialog>
             </Body>
             <Footer>
               <Button onClick={this.props.close}>Close</Button>
@@ -139,11 +138,11 @@ class DialogExample extends Component {
 }
 
 storiesOf('Dialog', module).add('default', () => (
-  <DialogContainer>
+  <ContextualDialog.DialogContainer>
     <Page>
-      <Dialog>
+      <ContextualDialog.Dialog>
         <DialogExample startOpen />
-      </Dialog>
+      </ContextualDialog.Dialog>
     </Page>
-  </DialogContainer>
+  </ContextualDialog.DialogContainer>
 ));

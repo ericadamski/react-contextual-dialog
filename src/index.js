@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import DialogManager from './dialog-manager';
 import { createDialog as cd } from './dialog-container';
+import DialogContainer from './dialog-container';
 import D from './dialog';
 
 export const createDialog = cd;
 
-export default class Dialog extends Component {
+class Dialog extends Component {
   uid = cd();
 
   open() {
@@ -28,3 +29,5 @@ export default class Dialog extends Component {
     return <D uid={this.uid}>{this.props.children}</D>;
   }
 }
+
+export default { Dialog, DialogContainer };
