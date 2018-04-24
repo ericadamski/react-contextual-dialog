@@ -11,8 +11,8 @@ import App from "./app";
 import colors from "./utils/colors";
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
-  @import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+  @import url('//fonts.googleapis.com/css?family=IBM+Plex+Sans');
+  @import url('//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 
   html, body, div#root {
     font-family: 'IBM Plex Sans', sans-serif;
