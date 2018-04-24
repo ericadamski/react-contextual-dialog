@@ -8,6 +8,8 @@ A simple set of dialog components that utilize React 16 context API
 
 ## Usage
 
+[![Edit Example of react-contextual-dialog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/n3omjooyzm)
+
 Render a single `DialogContainer` heigher than you want to render the dialogs.
 
 ```javascript
