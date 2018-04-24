@@ -1,6 +1,6 @@
 {
   "name": "react-contextual-dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "A simple set of dialog components that utilize react 16 context api",
   "main": "dist/index.js",
