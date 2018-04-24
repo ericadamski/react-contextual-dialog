@@ -55,7 +55,7 @@ class DialogManager {
   }
 }
 
-export default function DialogManager() {
+export default function() {
   if (!_manager) _manager = new DialogManager();
 
   return _manager;

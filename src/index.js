@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Children, Component, cloneElement } from 'react';
 import DialogManager from './dialog-manager';
-import { createDialog as cd } from './dialog-container';
-import DialogContainer from './dialog-container';
+import DialogContainer, { createDialog as cd } from './dialog-container';
 import D from './dialog';
 
 export const createDialog = cd;
 
-class Dialog extends Component {
+export class Dialog extends Component {
   uid = cd();
 
   open() {
@@ -21,13 +20,29 @@ class Dialog extends Component {
       .open();
   }
 
+  isOpen() {
+    return DialogManager().get(this.uid).isOpen;
+  }
+
   componentWillUnmount() {
     DialogManager().remove(this.uid);
   }
 
   render() {
-    return <D uid={this.uid}>{this.props.children}</D>;
+    if (Children.count(this.props.children) < 1) return null;
+
+    return (
+      <D uid={this.uid}>
+        {cloneElement(Children.toArray(this.props.children)[0], {
+          ...this.props,
+        })}
+      </D>
+    );
   }
 }
 
-export default { Dialog, DialogContainer };
+export default {
+  createDialog,
+  DialogContainer,
+  Dialog,
+};
